@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,5 +37,14 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void on_main_btn_click(View view) {
+        //меняем информацию в text_view_main
+        //TODO: новые данные доллждны случайно доставаться из БД
+        TextView t=new TextView(this);
+        t=(TextView)findViewById(R.id.text_view_main);
+
+        t.setText("Отожмись 30 раз");
     }
 }

@@ -17,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Glad to see you again!"
-            android:id="@+id/textView"
+            android:text="@string/welcome"
+            android:id="@+id/text_view_main"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.58" />
@@ -26,9 +26,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="What should I do?"
-            android:id="@+id/button"
+            android:text="@string/main_btn"
+            android:id="@+id/btn_main"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.40" />
+            android:layout_weight="0.40"
+            android:nestedScrollingEnabled="false"
+            android:onClick="on_main_btn_click"/>
     </LinearLayout>
 </RelativeLayout>
