@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+       // getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -37,6 +37,16 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("mainText", ((TextView)findViewById(R.id.text_view_main)).getText().toString());
+    }
+
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        ((TextView)findViewById(R.id.text_view_main)).setText(savedInstanceState.getString("mainText"));
     }
 
     public void on_main_btn_click(View view) {
